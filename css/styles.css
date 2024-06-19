@@ -21,17 +21,11 @@ html, body {
   justify-content: center;
   flex-direction: column;
 }
-
 .indexTitle h1 {
   margin-top: 100px;
   font-size: 13vw;
   line-height: 11vw;
 }
-
-.btnContainer {
-  margin: 20px 0px;
-}
-
 .indexTitle button {
   border: 0;
   outline: 0;
@@ -41,6 +35,15 @@ html, body {
   margin-right: 20px;
   cursor: pointer;
 }
+.indexTitle p {
+  max-width: 360px;
+  font-weight: 500;
+  padding-top: 20px;
+}
+
+.btnContainer {
+  margin: 20px 0px;
+}
 
 .btnDark {
   background: #000;
@@ -48,7 +51,6 @@ html, body {
   padding: 10px 10px 10px 30px;
   border-radius: 40px;
 }
-
 .btnDark img {
   width: 40px;
   background: #fff;
@@ -61,16 +63,9 @@ html, body {
   background: transparent;
   text-decoration: underline;
 }
-
 .btnLight img {
   width: 20px;
   margin-left: 10px;
-}
-
-.indexTitle p {
-  max-width: 360px;
-  font-weight: 500;
-  padding-top: 20px;
 }
 
 .userImg {
@@ -93,11 +88,9 @@ html, body {
   -webkit-background-clip: text;
   background-size: 0%;
 }
-
 .indexTitle h1 span:first-child {
   animation: textColor1 2s linear infinite alternate;
 }
-
 .indexTitle h1 span:last-child {
   animation: textColor2 2s linear infinite alternate;
 }
@@ -128,17 +121,14 @@ html, body {
 #proyects {
   padding: 10rem 0;
 }
-
 #proyects h2 {
   display: flex;
   justify-content: center;
   margin-bottom: 100px;
 }
-
-.allItems {
+#proyects .allItems {
   margin: 0px 20px;
 }
-
 #proyects .item {
   display: flex;
   align-items: center;
@@ -147,15 +137,36 @@ html, body {
   margin: 0 auto;
   margin-bottom: 15rem;
 }
-
 #proyects .item:nth-child(even) {
   flex-direction: row-reverse;
 }
-
 #proyects .item .left {
   flex: 1;
 }
-
+#proyects .item .left .img {
+  height: 500px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0px 0px 20px rgba(71, 133, 252, 0.2);
+  position: relative;
+}
+#proyects .item .left .img::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(228, 164, 164, 0.2196078431);
+}
+#proyects .item .left .img img {
+  object-fit: cover;
+  transition: 0.3s ease transform;
+}
+#proyects .item:hover .left .img img {
+  transform: scale(1.1);
+  z-index: 1;
+}
 #proyects .item .right {
   flex: 1;
   margin-left: -150px;
@@ -165,31 +176,23 @@ html, body {
   box-shadow: 0 0 20px #000028;
   z-index: 2;
 }
-
+#proyects .item .right .proyectTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+#proyects .item .right .proyectSub {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+#proyects .item .right .projectDescript {
+  color: rgb(62, 62, 62);
+  margin-bottom: 2rem;
+}
 #proyects .item:nth-child(even) .right {
   margin-left: 0;
 }
-
 #proyects .item:nth-child(even) .left {
   margin-left: -150px;
-}
-
-#proyects .item .left .img {
-  height: 500px;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0px 0px 20px rgba(71, 133, 252, 0.2);
-  position: relative;
-}
-
-#proyects .item .left .img::after {
-  position: absolute;
-  content: "";
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(228, 164, 164, 0.2196078431);
 }
 
 .buttons {
@@ -201,38 +204,12 @@ html, body {
   margin: 10px 10px 10px 0px;
   border-radius: 40px;
 }
-
 .buttons a {
   width: 100%;
   padding: 1px;
   text-align: center;
   text-decoration: none;
   color: white;
-}
-
-#proyects .item .left .img img {
-  object-fit: cover;
-  transition: 0.3s ease transform;
-}
-
-#proyects .item:hover .left .img img {
-  transform: scale(1.1);
-  z-index: 1;
-}
-
-#proyects .item .right .proyectTitle {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-#proyects .item .right .proyectSub {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-#proyects .item .right .projectDescript {
-  color: rgb(62, 62, 62);
-  margin-bottom: 2rem;
 }
 
 /*IMG Proyectos vertical e horizontal*/
@@ -261,6 +238,9 @@ html, body {
 .aboutNav .aboutLogo {
   width: 120px;
   cursor: pointer;
+  filter: brightness(0) invert(1);
+}
+.aboutNav #menuIconAbout {
   filter: brightness(0) invert(1);
 }
 .aboutNav li a {
@@ -324,14 +304,18 @@ html, body {
   }
 }
 
-.formArea {
-  padding-top: 7%;
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.formArea .row.single-form {
-  box-shadow: 0 2px 20px -5px rgba(0, 0, 0, 0.5);
+
+.siTuviera {
+  padding: 20px;
 }
+
 .formArea .leftC {
-  background: blueviolet;
+  background: #e4a4a4;
   padding: 200px 98px;
 }
 .formArea .leftC h2 {
@@ -366,6 +350,51 @@ html, body {
   font-size: 16px;
   margin-top: 20px;
   cursor: pointer;
+}
+
+.container {
+  padding: 3rem;
+}
+
+.h1Gal {
+  font-size: 3rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.imageGal {
+  display: block;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.caption {
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.thumbnail:hover {
+  transform: translateY(-4px);
+}
+
+.imgContainer:hover .overlay {
+  opacity: 1;
 }
 
 nav {
